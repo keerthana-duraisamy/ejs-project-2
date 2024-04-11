@@ -37,16 +37,15 @@
 
         field1.onkeyup=function(){
             newf1=this.value;
-            console.log(newf1)
         };
         msg1.onkeyup=function(){
             newmsg1=this.value;
-            console.log(newmsg1)
         };
+       var domain=document.domain;
     
         document.getElementById("newlink").onclick=function(){
-            field2.value=`http://localhost:3000/${newf1}/${newmsg1}`;
-            heading.innerHTML=`http://localhost:3000/${newf1}/${newmsg1}`;
+            field2.value=`${domain}/happy/${newf1}/${newmsg1}`;
+            heading.innerHTML=`${domain}/happy/${newf1}/${newmsg1}`;
         }
 
 </script>
