@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <label for="field1">Name</label>
+    <input type="text" id="field1" placeholder="type here"><br>
+    <label for="msg1">Msg</label>
+    <input type="text" id="msg1" placeholder="type here"><br>
+
+    <span>
+        <p id="newlink">click here to get link</p>
+    </span>
+    <label for="field2">Copy this</label>
+    <input type="text" id="field2" placeholder="live update here"><br>
+
+    <h1>Send this</h1>
+    <h3 id="heading"></h3>
+ </center>
+    <script>
+
+        const field1=document.getElementById("field1");
+        const msg1=document.getElementById("msg1");
+        const field2=document.getElementById("field2");
+        const heading=document.getElementById("heading");
+        let newf1,newmsg1;
+
+        field1.onkeyup=function(){
+            newf1=this.value;
+            console.log(newf1)
+        };
+        msg1.onkeyup=function(){
+            newmsg1=this.value;
+            console.log(newmsg1)
+        };
+    
+        document.getElementById("newlink").onclick=function(){
+            field2.value=`http://localhost:3000/${newf1}/${newmsg1}`;
+            heading.innerHTML=`http://localhost:3000/${newf1}/${newmsg1}`;
+        }
+
+</script>
+
+</body>
+</html>
